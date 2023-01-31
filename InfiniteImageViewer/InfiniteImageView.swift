@@ -43,12 +43,15 @@ class InfiniteImageView: UIView {
     private var panStartLocation: CGPoint?
     private var panStartContentOffset: CGPoint?
     private var panInertia: CGPoint = .zero
+    private var zoomScale: CGFloat = 1.0
+    private var pinchStartZoomScale: CGFloat?
+    private var pinchInertia: CGFloat = 1.0
     private var displayLink: CADisplayLink?
     private var framesPerSecond = 60
     private var backgroundUniforms: BackgroundUniforms {
         let center = Vec2f(Float(contentOffset.x), Float(contentOffset.y))
         
-        let halfSpan = Vec2f(Float(bounds.width), Float(bounds.height)) / 2.0
+        let halfSpan = Vec2f(Float(bounds.width), Float(bounds.height)) / 2.0 * Float(zoomScale)
         
         return .init(
             viewportMin: center - halfSpan,
@@ -90,6 +93,9 @@ class InfiniteImageView: UIView {
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGestureRecognizer)
+        
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
+        addGestureRecognizer(pinchGestureRecognizer)
     }
     
     required init?(coder: NSCoder) {
@@ -173,9 +179,27 @@ class InfiniteImageView: UIView {
                 return
             }
             let panOffset = gestureRecognizer.location(in: self) - panStartLocation
-            contentOffset = panStartContentOffset - panOffset
+            contentOffset = panStartContentOffset - panOffset * zoomScale
         case .ended, .failed, .cancelled:
             panInertia = gestureRecognizer.velocity(in: self)
+        default:
+            break
+        }
+    }
+    
+    @objc private func handlePinch(_ gestureRecognizer: UIPinchGestureRecognizer) {
+        switch gestureRecognizer.state {
+        case .began:
+            pinchInertia = .zero
+            pinchStartZoomScale = zoomScale
+        case .changed:
+            guard let pinchStartZoomScale else {
+                return
+            }
+            
+            zoomScale = pinchStartZoomScale / gestureRecognizer.scale
+        case .ended, .failed, .cancelled:
+            break
         default:
             break
         }
@@ -187,10 +211,10 @@ class InfiniteImageView: UIView {
         }
         
         let secondsPerFrame = 1.0 / Float(framesPerSecond)
-        let inertiaDampeningCoef = 0.87
-        let fpsAdjustedDampeningCoef = pow(0.87, secondsPerFrame / (1.0 / 60.0))
+        let inertiaDampeningCoef: Float = 0.87
+        let fpsAdjustedDampeningCoef = pow(inertiaDampeningCoef, secondsPerFrame / (1.0 / 60.0))
         panInertia = panInertia * CGFloat(fpsAdjustedDampeningCoef)
-        contentOffset = contentOffset - panInertia * CGFloat(secondsPerFrame)
+        contentOffset = contentOffset - panInertia * CGFloat(secondsPerFrame) * zoomScale
         
         let commandBuffer = commandQueue.makeCommandBuffer()!
         
