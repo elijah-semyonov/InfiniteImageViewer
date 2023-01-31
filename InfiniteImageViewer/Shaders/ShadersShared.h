@@ -63,4 +63,9 @@ struct BackgroundUniforms {
     float tileSize;
 };
 
+struct TileUniforms {
+    Vec2f topLeft;
+    Vec2f bottomRight;
+};
+
 #endif /* ShadersShared_h */

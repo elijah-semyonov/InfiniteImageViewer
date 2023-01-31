@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104415AF2989B14C006C214F /* InfiniteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415AE2989B14C006C214F /* InfiniteView.swift */; };
+		104415B12989B2C4006C214F /* InfiniteViewIndexBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415B02989B2C4006C214F /* InfiniteViewIndexBounds.swift */; };
+		104415B32989B315006C214F /* InfiniteViewVisibleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415B22989B315006C214F /* InfiniteViewVisibleSet.swift */; };
+		104415B52989B35A006C214F /* InfiniteViewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415B42989B35A006C214F /* InfiniteViewTile.swift */; };
+		104415B72989B3A4006C214F /* InfiniteViewTileIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415B62989B3A4006C214F /* InfiniteViewTileIndex.swift */; };
+		104415B92989B3C2006C214F /* InfiniteViewTileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415B82989B3C2006C214F /* InfiniteViewTileDataProvider.swift */; };
+		104415BC2989B710006C214F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415BB2989B710006C214F /* Utils.swift */; };
+		104415BE2989B82F006C214F /* InfiniteViewPositioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415BD2989B82F006C214F /* InfiniteViewPositioning.swift */; };
+		104415C02989BBB8006C214F /* Tile.metal in Sources */ = {isa = PBXBuildFile; fileRef = 104415BF2989BBB8006C214F /* Tile.metal */; };
+		104415C22989BFBF006C214F /* TileUniforms+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104415C12989BFBF006C214F /* TileUniforms+Extensions.swift */; };
 		1063679829897C7600FF8E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063679729897C7600FF8E9B /* AppDelegate.swift */; };
 		1063679A29897C7600FF8E9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063679929897C7600FF8E9B /* SceneDelegate.swift */; };
 		1063679C29897C7600FF8E9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063679B29897C7600FF8E9B /* ViewController.swift */; };
 		1063679F29897C7600FF8E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1063679D29897C7600FF8E9B /* Main.storyboard */; };
 		106367A129897C7700FF8E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106367A029897C7700FF8E9B /* Assets.xcassets */; };
 		106367A429897C7700FF8E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106367A229897C7700FF8E9B /* LaunchScreen.storyboard */; };
-		106367AE29897DF200FF8E9B /* InfiniteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367AD29897DF200FF8E9B /* InfiniteImageView.swift */; };
-		106367B02989806700FF8E9B /* TileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367AF2989806700FF8E9B /* TileDataProvider.swift */; };
+		106367B02989806700FF8E9B /* MockTileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367AF2989806700FF8E9B /* MockTileDataProvider.swift */; };
 		106367B32989834F00FF8E9B /* Background.metal in Sources */ = {isa = PBXBuildFile; fileRef = 106367B22989834F00FF8E9B /* Background.metal */; };
 		106367BB29898C9B00FF8E9B /* QuartzCore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */; };
 		106367BE2989931D00FF8E9B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 106367BD2989931D00FF8E9B /* .gitignore */; };
@@ -23,6 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104415AE2989B14C006C214F /* InfiniteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteView.swift; sourceTree = "<group>"; };
+		104415B02989B2C4006C214F /* InfiniteViewIndexBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteViewIndexBounds.swift; sourceTree = "<group>"; };
+		104415B22989B315006C214F /* InfiniteViewVisibleSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteViewVisibleSet.swift; sourceTree = "<group>"; };
+		104415B42989B35A006C214F /* InfiniteViewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteViewTile.swift; sourceTree = "<group>"; };
+		104415B62989B3A4006C214F /* InfiniteViewTileIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteViewTileIndex.swift; sourceTree = "<group>"; };
+		104415B82989B3C2006C214F /* InfiniteViewTileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteViewTileDataProvider.swift; sourceTree = "<group>"; };
+		104415BB2989B710006C214F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		104415BD2989B82F006C214F /* InfiniteViewPositioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteViewPositioning.swift; sourceTree = "<group>"; };
+		104415BF2989BBB8006C214F /* Tile.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Tile.metal; sourceTree = "<group>"; };
+		104415C12989BFBF006C214F /* TileUniforms+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TileUniforms+Extensions.swift"; sourceTree = "<group>"; };
 		1063679429897C7600FF8E9B /* InfiniteImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1063679729897C7600FF8E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1063679929897C7600FF8E9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,8 +50,7 @@
 		106367A029897C7700FF8E9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		106367A329897C7700FF8E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		106367A529897C7700FF8E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		106367AD29897DF200FF8E9B /* InfiniteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteImageView.swift; sourceTree = "<group>"; };
-		106367AF2989806700FF8E9B /* TileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileDataProvider.swift; sourceTree = "<group>"; };
+		106367AF2989806700FF8E9B /* MockTileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTileDataProvider.swift; sourceTree = "<group>"; };
 		106367B22989834F00FF8E9B /* Background.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Background.metal; sourceTree = "<group>"; };
 		106367B42989836E00FF8E9B /* ShadersShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadersShared.h; sourceTree = "<group>"; };
 		106367B5298983D500FF8E9B /* InfiniteImageViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfiniteImageViewer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -53,6 +71,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104415AD2989B128006C214F /* InfiniteView */ = {
+			isa = PBXGroup;
+			children = (
+				106367AF2989806700FF8E9B /* MockTileDataProvider.swift */,
+				104415AE2989B14C006C214F /* InfiniteView.swift */,
+				104415B02989B2C4006C214F /* InfiniteViewIndexBounds.swift */,
+				104415B22989B315006C214F /* InfiniteViewVisibleSet.swift */,
+				104415B42989B35A006C214F /* InfiniteViewTile.swift */,
+				104415B62989B3A4006C214F /* InfiniteViewTileIndex.swift */,
+				104415B82989B3C2006C214F /* InfiniteViewTileDataProvider.swift */,
+				104415BD2989B82F006C214F /* InfiniteViewPositioning.swift */,
+			);
+			path = InfiniteView;
+			sourceTree = "<group>";
+		};
+		104415BA2989B705006C214F /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				104415BB2989B710006C214F /* Utils.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		1063678B29897C7600FF8E9B = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +114,8 @@
 		1063679629897C7600FF8E9B /* InfiniteImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				104415BA2989B705006C214F /* Misc */,
+				104415AD2989B128006C214F /* InfiniteView */,
 				106367B929898C1D00FF8E9B /* Extensions */,
 				106367B12989831000FF8E9B /* Shaders */,
 				1063679729897C7600FF8E9B /* AppDelegate.swift */,
@@ -82,8 +125,6 @@
 				106367A029897C7700FF8E9B /* Assets.xcassets */,
 				106367A229897C7700FF8E9B /* LaunchScreen.storyboard */,
 				106367A529897C7700FF8E9B /* Info.plist */,
-				106367AD29897DF200FF8E9B /* InfiniteImageView.swift */,
-				106367AF2989806700FF8E9B /* TileDataProvider.swift */,
 				106367B5298983D500FF8E9B /* InfiniteImageViewer-Bridging-Header.h */,
 			);
 			path = InfiniteImageViewer;
@@ -94,6 +135,7 @@
 			children = (
 				106367B22989834F00FF8E9B /* Background.metal */,
 				106367B42989836E00FF8E9B /* ShadersShared.h */,
+				104415BF2989BBB8006C214F /* Tile.metal */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -104,6 +146,7 @@
 				106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */,
 				106367C0298994B600FF8E9B /* Metal+Extensions.swift */,
 				106367C429899B7A00FF8E9B /* Foundation+Extensions.swift */,
+				104415C12989BFBF006C214F /* TileUniforms+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,12 +224,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104415B12989B2C4006C214F /* InfiniteViewIndexBounds.swift in Sources */,
+				104415C02989BBB8006C214F /* Tile.metal in Sources */,
+				104415B92989B3C2006C214F /* InfiniteViewTileDataProvider.swift in Sources */,
 				1063679C29897C7600FF8E9B /* ViewController.swift in Sources */,
 				1063679829897C7600FF8E9B /* AppDelegate.swift in Sources */,
 				106367BB29898C9B00FF8E9B /* QuartzCore+Extensions.swift in Sources */,
-				106367B02989806700FF8E9B /* TileDataProvider.swift in Sources */,
+				104415BC2989B710006C214F /* Utils.swift in Sources */,
+				104415B52989B35A006C214F /* InfiniteViewTile.swift in Sources */,
+				104415B32989B315006C214F /* InfiniteViewVisibleSet.swift in Sources */,
+				106367B02989806700FF8E9B /* MockTileDataProvider.swift in Sources */,
+				104415AF2989B14C006C214F /* InfiniteView.swift in Sources */,
 				106367B32989834F00FF8E9B /* Background.metal in Sources */,
-				106367AE29897DF200FF8E9B /* InfiniteImageView.swift in Sources */,
+				104415B72989B3A4006C214F /* InfiniteViewTileIndex.swift in Sources */,
+				104415BE2989B82F006C214F /* InfiniteViewPositioning.swift in Sources */,
+				104415C22989BFBF006C214F /* TileUniforms+Extensions.swift in Sources */,
 				1063679A29897C7600FF8E9B /* SceneDelegate.swift in Sources */,
 				106367C529899B7A00FF8E9B /* Foundation+Extensions.swift in Sources */,
 				106367C1298994B600FF8E9B /* Metal+Extensions.swift in Sources */,

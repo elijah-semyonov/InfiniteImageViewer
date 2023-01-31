@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     override func loadView() {
-        guard let infiniteImageView = InfiniteImageView(tileDataProvider: TileDataProvider()) else {
+        guard let infiniteView = InfiniteView(tileDataProvider: MockTileDataProvider()) else {
             assertionFailure()
             view = UIView()
             return
         }
         
-        view = infiniteImageView
+        view = infiniteView
     }
 }
 
