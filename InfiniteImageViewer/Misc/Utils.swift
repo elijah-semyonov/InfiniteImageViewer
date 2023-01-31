@@ -24,3 +24,18 @@ func loadRenderPipelineState(name: String, device: MTLDevice, library: MTLLibrar
     
     return try? device.makeRenderPipelineState(descriptor: descriptor)
 }
+
+func createOrthoMatrix(left: Float, right: Float, bottom: Float, top: Float, near: Float, far: Float) -> float4x4 {
+    let rl = right - left
+    let tb = top - bottom
+    let fn = far - near
+
+    return float4x4(
+        [
+            [2.0 / rl, 0.0, 0.0, 0.0],
+            [0.0, 2.0 / tb, 0.0, 0.0],
+            [0.0, 0.0, -2.0 / fn, 0.0],
+            [-(right + left) / rl, -(top + bottom) / tb, -(far + near) / fn, 1.0]
+        ]
+    )
+}

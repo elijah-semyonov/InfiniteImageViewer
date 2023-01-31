@@ -54,6 +54,8 @@ inline QuadVertex quadVertexAtIndex(uint index) {
 #include <simd/simd.h>
 
 typedef vector_float2 Vec2f;
+typedef vector_float4 Vec4f;
+typedef matrix_float4x4 Mat4x4f;
 
 #endif
 

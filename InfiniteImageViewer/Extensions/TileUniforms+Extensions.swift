@@ -14,14 +14,13 @@ extension TileUniforms {
         
         /// Transform from UIKit-based points to NDC
         let transform = { (input: Vec2f) -> Vec2f in
-            var v = input - positioning.center
-            v /= positioning.span
+            let matrix = positioning.orthogonalProjectionMatrix
             
-            v = (v * 2.0) - Vec2f(repeating: 1.0)
+            let v4 = matrix * Vec4f(input.x, input.y, 0.0, 1.0)
             
-            v.y = -v.y
-            
-            return v
+            let v2 = Vec2f(v4.x / v4.w, v4.y / v4.w)
+
+            return v2
         }
         
         self.init(topLeft: transform(topLeft), bottomRight: transform(bottomRight))
