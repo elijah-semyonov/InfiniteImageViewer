@@ -92,6 +92,7 @@ class InfiniteImageView: UIView {
         isUserInteractionEnabled = true
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        panGestureRecognizer.maximumNumberOfTouches = 1
         addGestureRecognizer(panGestureRecognizer)
         
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
