@@ -33,15 +33,28 @@ class InfiniteImageView: UIView {
     private let library: MTLLibrary
     private let commandQueue: MTLCommandQueue
     private let backgroundRenderPipelineState: MTLRenderPipelineState
+    private let tileSize: CGFloat = 400.0
     private let inflightSemaphore = DispatchSemaphore(value: 3)
     private var screenScale: CGFloat? {
         didSet {
             updateDrawableSize()
         }
     }
+    private var panStartLocation: CGPoint?
+    private var panStartContentOffset: CGPoint?
+    private var panInertia: CGPoint = .zero
     private var displayLink: CADisplayLink?
+    private var framesPerSecond = 60
     private var backgroundUniforms: BackgroundUniforms {
-        .init(viewportMin: .init(0.0, 0.0), viewportMax: Vec2f(Float(bounds.width), Float(bounds.height)))
+        let center = Vec2f(Float(contentOffset.x), Float(contentOffset.y))
+        
+        let halfSpan = Vec2f(Float(bounds.width), Float(bounds.height)) / 2.0
+        
+        return .init(
+            viewportMin: center - halfSpan,
+            viewportMax: center + halfSpan,
+            tileSize: Float(tileSize)
+        )
     }
     
     init?(tileDataProvider: InfiniteImageViewTileDataProvider) {
@@ -133,6 +146,8 @@ class InfiniteImageView: UIView {
             self?.render()
         }
         
+        self.framesPerSecond = framesPerSecond
+        
         let framesPerSecond = Float(framesPerSecond)
         
         displayLink.preferredFrameRateRange = .init(minimum: 10.0, maximum: framesPerSecond, preferred: framesPerSecond)
@@ -148,13 +163,34 @@ class InfiniteImageView: UIView {
     }
     
     @objc private func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
-        print(gestureRecognizer)
+        switch gestureRecognizer.state {
+        case .began:
+            panInertia = .zero
+            panStartLocation = gestureRecognizer.location(in: self)
+            panStartContentOffset = contentOffset
+        case .changed:
+            guard let panStartLocation, let panStartContentOffset else {
+                return
+            }
+            let panOffset = gestureRecognizer.location(in: self) - panStartLocation
+            contentOffset = panStartContentOffset - panOffset
+        case .ended, .failed, .cancelled:
+            panInertia = gestureRecognizer.velocity(in: self)
+        default:
+            break
+        }
     }
     
     private func render() {
         guard metalLayer.drawableSize.width >= 1.0 && metalLayer.drawableSize.height >= 1.0 else {
             return
         }
+        
+        let secondsPerFrame = 1.0 / Float(framesPerSecond)
+        let inertiaDampeningCoef = 0.87
+        let fpsAdjustedDampeningCoef = pow(0.87, secondsPerFrame / (1.0 / 60.0))
+        panInertia = panInertia * CGFloat(fpsAdjustedDampeningCoef)
+        contentOffset = contentOffset - panInertia * CGFloat(secondsPerFrame)
         
         let commandBuffer = commandQueue.makeCommandBuffer()!
         

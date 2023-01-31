@@ -60,6 +60,7 @@ typedef vector_float2 Vec2f;
 struct BackgroundUniforms {
     Vec2f viewportMin;
     Vec2f viewportMax;
+    float tileSize;
 };
 
 #endif /* ShadersShared_h */

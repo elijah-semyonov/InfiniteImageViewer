@@ -19,6 +19,7 @@
 		106367BB29898C9B00FF8E9B /* QuartzCore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */; };
 		106367BE2989931D00FF8E9B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 106367BD2989931D00FF8E9B /* .gitignore */; };
 		106367C1298994B600FF8E9B /* Metal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367C0298994B600FF8E9B /* Metal+Extensions.swift */; };
+		106367C529899B7A00FF8E9B /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367C429899B7A00FF8E9B /* Foundation+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuartzCore+Extensions.swift"; sourceTree = "<group>"; };
 		106367BD2989931D00FF8E9B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		106367C0298994B600FF8E9B /* Metal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Metal+Extensions.swift"; sourceTree = "<group>"; };
+		106367C429899B7A00FF8E9B /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */,
 				106367C0298994B600FF8E9B /* Metal+Extensions.swift */,
+				106367C429899B7A00FF8E9B /* Foundation+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				106367B32989834F00FF8E9B /* Background.metal in Sources */,
 				106367AE29897DF200FF8E9B /* InfiniteImageView.swift in Sources */,
 				1063679A29897C7600FF8E9B /* SceneDelegate.swift in Sources */,
+				106367C529899B7A00FF8E9B /* Foundation+Extensions.swift in Sources */,
 				106367C1298994B600FF8E9B /* Metal+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,7 +34,7 @@ fragment half4 background_ff
 ) {
     auto coordinate = mix(uniforms.viewportMin, uniforms.viewportMax, varyings.texCoord);
     
-    auto tile = coordinate / float2(100.0);
+    auto tile = coordinate / float2(uniforms.tileSize);
     auto tileFract = fract(tile);
     
     auto xySigns = step(0.5, tileFract) * 2.0 - 1.0;
