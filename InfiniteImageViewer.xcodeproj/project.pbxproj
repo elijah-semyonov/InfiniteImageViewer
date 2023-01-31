@@ -15,6 +15,10 @@
 		106367A429897C7700FF8E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106367A229897C7700FF8E9B /* LaunchScreen.storyboard */; };
 		106367AE29897DF200FF8E9B /* InfiniteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367AD29897DF200FF8E9B /* InfiniteImageView.swift */; };
 		106367B02989806700FF8E9B /* TileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367AF2989806700FF8E9B /* TileDataProvider.swift */; };
+		106367B32989834F00FF8E9B /* Background.metal in Sources */ = {isa = PBXBuildFile; fileRef = 106367B22989834F00FF8E9B /* Background.metal */; };
+		106367BB29898C9B00FF8E9B /* QuartzCore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */; };
+		106367BE2989931D00FF8E9B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 106367BD2989931D00FF8E9B /* .gitignore */; };
+		106367C1298994B600FF8E9B /* Metal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106367C0298994B600FF8E9B /* Metal+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,12 @@
 		106367A529897C7700FF8E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		106367AD29897DF200FF8E9B /* InfiniteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteImageView.swift; sourceTree = "<group>"; };
 		106367AF2989806700FF8E9B /* TileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileDataProvider.swift; sourceTree = "<group>"; };
+		106367B22989834F00FF8E9B /* Background.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Background.metal; sourceTree = "<group>"; };
+		106367B42989836E00FF8E9B /* ShadersShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadersShared.h; sourceTree = "<group>"; };
+		106367B5298983D500FF8E9B /* InfiniteImageViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfiniteImageViewer-Bridging-Header.h"; sourceTree = "<group>"; };
+		106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuartzCore+Extensions.swift"; sourceTree = "<group>"; };
+		106367BD2989931D00FF8E9B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		106367C0298994B600FF8E9B /* Metal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Metal+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,7 @@
 		1063678B29897C7600FF8E9B = {
 			isa = PBXGroup;
 			children = (
+				106367BD2989931D00FF8E9B /* .gitignore */,
 				1063679629897C7600FF8E9B /* InfiniteImageViewer */,
 				1063679529897C7600FF8E9B /* Products */,
 			);
@@ -60,6 +71,8 @@
 		1063679629897C7600FF8E9B /* InfiniteImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				106367B929898C1D00FF8E9B /* Extensions */,
+				106367B12989831000FF8E9B /* Shaders */,
 				1063679729897C7600FF8E9B /* AppDelegate.swift */,
 				1063679929897C7600FF8E9B /* SceneDelegate.swift */,
 				1063679B29897C7600FF8E9B /* ViewController.swift */,
@@ -69,8 +82,27 @@
 				106367A529897C7700FF8E9B /* Info.plist */,
 				106367AD29897DF200FF8E9B /* InfiniteImageView.swift */,
 				106367AF2989806700FF8E9B /* TileDataProvider.swift */,
+				106367B5298983D500FF8E9B /* InfiniteImageViewer-Bridging-Header.h */,
 			);
 			path = InfiniteImageViewer;
+			sourceTree = "<group>";
+		};
+		106367B12989831000FF8E9B /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				106367B22989834F00FF8E9B /* Background.metal */,
+				106367B42989836E00FF8E9B /* ShadersShared.h */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		106367B929898C1D00FF8E9B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				106367BA29898C9B00FF8E9B /* QuartzCore+Extensions.swift */,
+				106367C0298994B600FF8E9B /* Metal+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +137,7 @@
 				TargetAttributes = {
 					1063679329897C7600FF8E9B = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -131,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106367BE2989931D00FF8E9B /* .gitignore in Resources */,
 				106367A429897C7700FF8E9B /* LaunchScreen.storyboard in Resources */,
 				106367A129897C7700FF8E9B /* Assets.xcassets in Resources */,
 				1063679F29897C7600FF8E9B /* Main.storyboard in Resources */,
@@ -146,9 +180,12 @@
 			files = (
 				1063679C29897C7600FF8E9B /* ViewController.swift in Sources */,
 				1063679829897C7600FF8E9B /* AppDelegate.swift in Sources */,
+				106367BB29898C9B00FF8E9B /* QuartzCore+Extensions.swift in Sources */,
 				106367B02989806700FF8E9B /* TileDataProvider.swift in Sources */,
+				106367B32989834F00FF8E9B /* Background.metal in Sources */,
 				106367AE29897DF200FF8E9B /* InfiniteImageView.swift in Sources */,
 				1063679A29897C7600FF8E9B /* SceneDelegate.swift in Sources */,
+				106367C1298994B600FF8E9B /* Metal+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +330,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45226JTYHN;
@@ -311,6 +349,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.elijah-semyonov.InfiniteImageViewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "InfiniteImageViewer/InfiniteImageViewer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45226JTYHN;
@@ -339,6 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.elijah-semyonov.InfiniteImageViewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "InfiniteImageViewer/InfiniteImageViewer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
